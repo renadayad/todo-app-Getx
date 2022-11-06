@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 class Tasks extends StatelessWidget {
   @override
   var todoController = Get.put(TaskData());
-  bool value = false;
+  // bool value = false;
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
@@ -73,8 +73,14 @@ class Tasks extends StatelessWidget {
                               child: ListTile(
                                 title: Text('${todoController.tasks[index]}'),
                                 leading: Checkbox(
-                                  value: value,
-                                  onChanged: (value) => this.value = value!,
+                                  value: todoController.ischeckbox[index],
+                                  onChanged: (value) {
+                                    todoController.ischeckbox[index] = value!;
+                                    todoController.tasks[index] =
+                                        todoController.tasks[index];
+                                  },
+                                  // value: value,
+                                  // onChanged: (value) => this.value = value!,
                                 )
                                 // GestureDetector(
                                 //   child: Icon(Icons.check_box_outline_blank),

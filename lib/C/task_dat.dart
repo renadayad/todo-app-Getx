@@ -5,13 +5,15 @@ import 'package:get/get.dart';
 
 class TaskData extends GetxController {
   var tasks = [].obs;
-  // var value = false.obs;
+  var ischeckbox = [].obs;
 
   void addTask(var newTask) {
     tasks.add(newTask);
+    ischeckbox.add(false);
   }
 
   void deleteTask(int index) {
     tasks.removeAt(index);
+    ischeckbox.removeAt(index);
   }
 }
